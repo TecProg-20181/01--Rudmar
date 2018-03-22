@@ -215,17 +215,17 @@ int main() {
                       else x = img.height - 1 - i2;
 
                       Pixel aux1;
-                      aux1.r = img.pixel[i2][j][0];
-                      aux1.g = img.pixel[i2][j][1];
-                      aux1.b = img.pixel[i2][j][2];
+                      aux1.red = img.pixel[i2][j][0];
+                      aux1.green = img.pixel[i2][j][1];
+                      aux1.blue = img.pixel[i2][j][2];
 
                       img.pixel[i2][j][0] = img.pixel[x][y][0];
                       img.pixel[i2][j][1] = img.pixel[x][y][1];
                       img.pixel[i2][j][2] = img.pixel[x][y][2];
 
-                      img.pixel[x][y][0] = aux1.r;
-                      img.pixel[x][y][1] = aux1.g;
-                      img.pixel[x][y][2] = aux1.b;
+                      img.pixel[x][y][0] = aux1.red;
+                      img.pixel[x][y][1] = aux1.green;
+                      img.pixel[x][y][2] = aux1.blue;
                   }
               }
               break;
