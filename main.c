@@ -179,7 +179,7 @@ int main() {
               // Blur
               int tamanho = 0;
               scanf("%d", &tamanho);
-              blur(img.h, img.pixel, tamanho, img.width);
+              blur(img.height, img.pixel, tamanho, img.width);
               break;
             }
             case 4: {
@@ -199,16 +199,22 @@ int main() {
 
               int width = img.width, height = img.height;
 
-              if (horizontal == 1) width /= 2;
-              else height /= 2;
-
+              if {
+                (horizontal == 1) width /= 2;
+              }
+              else {
+                height /= 2;
+              }
               for (int i2 = 0; i2 < height; ++i2) {
                   for (int j = 0; j < width; ++j) {
                       int x = i2, y = j;
 
-                      if (horizontal == 1) y = img.width - 1 - j;
-                      else x = img.height - 1 - i2;
-
+                      if {
+                        (horizontal == 1) y = img.width - 1 - j;
+                      }
+                      else {
+                        x = img.height - 1 - i2;
+                      }
                       Pixel aux1;
                       aux1.red = img.pixel[i2][j][0];
                       aux1.green = img.pixel[i2][j][1];
@@ -232,16 +238,15 @@ int main() {
             }
             case 7: {
               // Cortar Imagem
-              int x, y;
+              int corte_eixo_x, corte_eixo_y;
               scanf("%d %d", &x, &y);
               int width, height;
-              scanf("%d %d", &width, &h);
+              scanf("%d %d", &width, &height);
 
-              img = cortar_imagem(img, x, y, width, height);
+              img = cortar_imagem(img, corte_eixo_x, corte_eixo_y, width, height);
               break;
             }
         }
-
     }
 
     // Mostra o tipo de imagem
