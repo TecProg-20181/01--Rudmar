@@ -66,7 +66,6 @@ void blur(unsigned int height, unsigned short int pixel[512][512][3], int T, uns
                 }
             }
 
-            // printf("%u", media.r)
             media.red /= T * T;
             media.green /= T * T;
             media.blue /= T * T;
@@ -249,12 +248,12 @@ int main() {
 
     }
 
-    // print type of image
+    // Mostra o tipo de imagem
     printf("P3\n");
-    // print widthidth height and color of image
+    // Mostra o tamanho e largura da imagem
     printf("%u %u\n255\n", img.width, img.height);
 
-    // print pixels of image
+    // Mostra pixels da imagem
     for (unsigned int i = 0; i < img.height; ++i) {
         for (unsigned int j = 0; j < img.width; ++j) {
             printf("%hu %hu %hu ", img.pixel[i][j][0],
