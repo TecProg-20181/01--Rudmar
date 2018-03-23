@@ -7,10 +7,6 @@ typedef struct _pixel {
 } Pixel;
 
 typedef struct _image {
-    // [widthidth][height][rgb]
-    // 0 -> r
-    // 1 -> g
-    // 2 -> b
     unsigned short int pixel[512][512][3];
     unsigned int width;
     unsigned int height;
@@ -60,9 +56,9 @@ void blur(unsigned int height, unsigned short int pixel[512][512][3], int T, uns
             int min_width = (width - 1 > j + T/2) ? j + T/2 : width - 1;
             for(int x = (0 > i - T/2 ? 0 : i - T/2); x <= menor_height; ++x) {
                 for(int y = (0 > j - T/2 ? 0 : j - T/2); y <= min_width; ++y) {
-                    media.r += pixel[x][y][0];
-                    media.g += pixel[x][y][1];
-                    media.b += pixel[x][y][2];
+                    media.red += pixel[x][y][0];
+                    media.green += pixel[x][y][1];
+                    media.blue += pixel[x][y][2];
                 }
             }
 
